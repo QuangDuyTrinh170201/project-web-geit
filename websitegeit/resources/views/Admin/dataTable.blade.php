@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
- 
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
         <!-- ============================================================== -->
          <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{{url('public')}}/Admin/index.html">Concept</a>
+                <a class="navbar-brand" href="{{url('public')}}/Admin/index.html">GeitStop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -177,7 +177,7 @@ John Abraham</h5>
                                     </ul>
                                 </div>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
@@ -260,9 +260,9 @@ John Abraham</h5>
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            
+
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@ John Abraham</h5>
                     <!-- end basic table  -->
                     <!-- ============================================================== -->
                 </div>
-  
+
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
@@ -320,7 +320,7 @@ John Abraham</h5>
     <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
-    
+
 </body>
- 
+
 </html>
