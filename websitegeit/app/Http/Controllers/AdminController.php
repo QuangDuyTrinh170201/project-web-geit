@@ -8,9 +8,12 @@ use App\Models\Tbcategory;
 
 class AdminController extends Controller
 {
+
+    //Controller for Product
     public function indexAdmin()
     {
-        return view('Admin.admin');
+        $data = Tbproduct::get();
+        return view('Admin.admin', compact('data'));
     }
 
     public function dataTable()
@@ -19,6 +22,7 @@ class AdminController extends Controller
         return view('Admin.dataTable', compact('data'));
     }
 
+    
     public function categoryShow()
     {
         $data = Tbcategory::get();
@@ -47,9 +51,10 @@ class AdminController extends Controller
         $product->save();
 
         return redirect()->back()->with('success', 'Product added successfully!');
-
+        
     }
-
+    
+    
     public function delete($id)
     {
         Tbproduct::where('productID', '=', $id)->delete();
@@ -76,5 +81,55 @@ class AdminController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Product updated successfully!');
+    }
+
+
+    // Controller for Category Admin
+    public function dataCat()
+    {
+        $data = Tbcategory::get();
+        return view('Admin.dataCategory', compact('data'));
+    }
+
+
+    public function addCat()
+    {
+        return view('Admin.addCategory');   
+    
+    }
+
+    public function saveCate(Request $request)
+    {
+        $name = $request->name;
+        
+        $cate = new Tbcategory();
+
+
+        $cate->categoryName = $name;
+        $cate->save();
+
+        return redirect()->back()->with('success', 'Category added successfully!');
+    }
+
+    public function deleteCate($id)
+    {
+        Tbcategory::where('categoryID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Category deleted successfully!');
+    }
+
+    public function getInfoCate($id)
+    {
+        $data = Tbcategory::where('categoryID', '=', $id)->first();
+        return view('Admin.editCategory', compact('data'));
+    }
+
+    public function updateCategory(Request $request)
+    {
+        $id = $request->id;
+        Tbcategory::where('categoryID', '=', $id)->update([
+            'categoryName'=>$request->name,
+        ]);
+
+        return redirect()->back()->with('success', 'Category updated successfully!');
     }
 }

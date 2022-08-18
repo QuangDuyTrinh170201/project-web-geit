@@ -172,7 +172,7 @@
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/data-tables.html">Data Tables</a>
+                                            <a class="nav-link" href="{{url('data-table')}}">Data Tables</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -289,30 +289,28 @@
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">#</th>
                                                         <th class="border-0">Product ID</th>
                                                         <th class="border-0">Product Name</th>
-                                                        <th class="border-0">Product Image</th>
-                                                        <th class="border-0">Product Details</th>
                                                         <th class="border-0">Product Price</th>
+                                                        <th class="border-0">Product Details</th>
+                                                        <th class="border-0">Product Image</th>
+                                                        <th class="border-0">Product Category</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach ($data as $row)
                                                     <tr>
-                                                        <td></td><!-- stt  -->
-                                                        <td></td><!-- id  -->
-                                                        <td> </td><!--Product Name  -->
-                                                        <td>
-                                                            <div class="m-r-10"><img src="#" alt="user" class="rounded" width="45"></div><!-- IMG  -->
-                                                        </td>
-                                                        <td></td><!--Product Details  -->
-                                                        <td></td><!--Product Price -->
-                                                
-                                                        <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td>
+                                                        <td>{{$row->productID}}</td>
+                                                        <td>{{$row->productName}}</td>
+                                                        <td>{{$row->productPrice}}</td>
+                                                        <td>{{$row->productDetail}}</td>
+                                                        <td><img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" width="150px" height="100px" alt=""/></td>
+                                                        <td>{{$row->categoryID}}</td>
+                                                        {{-- <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td> --}}
                                                     </tr>
-                                                   
+                                                    @endforeach
                                                     <tr>
-                                                        <td colspan="9"><a href="pages/data-tables.html" class="btn btn-outline-light float-right">View Details</a></td>
+                                                        <td colspan="9"><a href="{{url('data-table')}}" class="btn btn-outline-light float-right">View Details</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
