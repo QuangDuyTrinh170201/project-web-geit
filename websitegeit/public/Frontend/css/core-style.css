@@ -357,6 +357,7 @@ img {
           height: 40px; } }
   .header_area .favourite-area a,
   .header_area .user-login-info a,
+  .header_area .login-information a,
   .header_area .cart-area a {
     position: relative;
     z-index: 1;
@@ -372,6 +373,7 @@ img {
     @media only screen and (max-width: 767px) {
       .header_area .favourite-area a,
       .header_area .user-login-info a,
+      .header_area .login-information a,
       .header_area .cart-area a {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 50px;
@@ -380,10 +382,12 @@ img {
         line-height: 40px; } }
     .header_area .favourite-area a img,
     .header_area .user-login-info a img,
+    .header_area .login-information a img,
     .header_area .cart-area a img {
       max-width: 20px; }
     .header_area .favourite-area a span,
     .header_area .user-login-info a span,
+    .header_area .login-information a span,
     .header_area .cart-area a span {
       font-family: "Ubuntu", sans-serif;
       font-size: 18px;

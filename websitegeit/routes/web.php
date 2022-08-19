@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,6 @@ Route::post('/register-user', [AuthController::class, 'registerUser'])->name('re
 Route::post('login-user', [AuthController::class, 'loginUser'])->name('login-user');
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('isLoggedIn');
 Route::get('/logout', [AuthController::class, 'logOut']);
+
+//xu ly product va single product
+Route::get('product',[Productcontroller::class, 'index']);

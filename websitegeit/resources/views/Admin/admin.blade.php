@@ -310,7 +310,8 @@
                                                     </tr>
                                                     @endforeach
                                                     <tr>
-                                                        <td colspan="9"><a href="{{url('data-table')}}" class="btn btn-outline-light float-right">View Details</a></td>
+                                                        <td colspan="5"><a href="{{url('data-table')}}" class="btn btn-outline-light float-center">View Details</a></td>
+                                                        <td colspan="5"><a href="{{url('data-category')}}" class="btn btn-outline-light float-center">View Categories</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

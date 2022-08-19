@@ -17,6 +17,7 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/css/core-style.css">
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
 
@@ -46,31 +47,7 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="{{ url('home') }}">Home</a></li>
-                            <li><a href="#">Shop</a>
-                                <div class="megamenu">
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Technology</li>
-                                        <li><a href="camera-product.html">Camera</a></li>
-                                        <li><a href="motobike-product.html">Motobike</a></li>
-                                        <li><a href="game-consoles-product.html">Game consoles</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Life</li>
-                                        <li><a href="clothing-fashion-product.html">Clothing fashion</a></li>
-                                        <li><a href="Men-cosmetics-product.html">Men's cosmetics</a></li>
-                                        <li><a href="nutritional-product.html">Nutritional food for men</a></li>
-
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Accessory:</li>
-                                        <li><a href="Electronic-product.html">Electronic accessories</a></li>
-                                        <li><a href="travel-product.html">travel accessories</a></li>
-
-                                    </ul>
-                                    <div class="single-mega cn-col-4">
-                                        <img src="{{ url('public') }}/Frontend/img/bg-img/bg-6.jpg" alt="">
-                                    </div>
-                                </div>
+                            <li><a href="{{url('product')}}">Shop</a>
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -105,36 +82,37 @@
                     <a href="#" id="essenceCartBtn"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg"
                             alt=""> <span>3</span></a>
                 </div>
-                <div class="classynav">
-                    <ul>
-                        <li><a src="{{ url('public') }}/Frontend/img/bg-img/bg-6.jpg"></a>
-                            <div class="megamenu">
-                                <div class="container">
-                                    <div class="col-md-4 col-md-offset-4" style="margin-top:20px; text-align:center;">
-                                        <hr>
-                                        <table class="table">
-                                            <thead>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Action</th>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>{{ $data->customerName }}</td>
-                                                    <td>{{ $data->customerPhone }}</td>
-                                                    <td><a href="logout">Log Out</a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                <div class="dropdown" class="login-information" style="float:right;">
+                    <a href="#">
+                        <img src="{{ url('public') }}/Frontend/img/core-img/profile.svg" alt=""
+                            style="padding-top: 15px"></a>
+                    <div class="dropdown-content">
+                        <div class="container">
+                            <div class="col-md-4 col-md-offset-4" style="margin-top:20px; text-align:center;">
+                                <hr>
+                                <table class="table">
+                                    <thead>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ $data->customerName }}</td>
+                                            <td>{{ $data->customerPhone }}</td>
+                                            <td><a href="{{ url('logout') }}">Log Out</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- User Login Info -->
-            <!-- Cart Area -->
+            <!---->
+        </div>
+        <!-- User Login Info -->
+        <!-- Cart Area -->
         </div>
 
         </div>
