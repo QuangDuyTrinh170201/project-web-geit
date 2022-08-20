@@ -68,7 +68,7 @@ class AuthController extends Controller
         return view('Frontend.index', compact('data'));
     }
 
-    public function logout(){
+    public function logOut(){
         if(Session::has('loginId')){
             Session::pull('loginId');
             return redirect('login');   

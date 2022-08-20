@@ -25,7 +25,7 @@
                         {{Session::get('success')}}
                     </div>                    
                 @endif
-                <form action="{{url('update')}}" method="POST">
+                <form action="{{url('update')}}" method="POST" enctype="multipart/form-data">
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Product ID</h5></label>
                         <input type="text" name="id" class="form-control" placeholder="Enter product ID" value="{{$data->productID}}" readonly>

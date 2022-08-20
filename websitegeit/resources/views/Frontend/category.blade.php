@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Electronic Product</title>
+    <title>$category->categoryName Product</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ url('public') }}/Frontend/img/core-img/favicon.ico">
@@ -163,7 +163,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>ALL PRODUCTS</h2>
+                        <h2>{{$category->categoryName}}</h2>
                     </div>
                 </div>
             </div>
@@ -181,19 +181,19 @@
                         <!-- ##### Single Widget ##### -->
                         <div class="widget catagory mb-50">
                             <!-- Widget Title -->
-                            <h6 class="widget-title mb-30">SEARCH PRODUCT BY</h6>
-
+                            <h6 class="widget-title mb-30">Back To All Products</h6>
+                            <td colspan="5"><a href="{{url('product')}}" class="btn btn-light float-center">Back!!</a></td>
                             <!--  Catagories  -->
                             <div class="catagories-menu">
                                 <ul id="menu-content2" class="menu-content collapse show">
                                     <!-- Single Item -->
                                     <li data-toggle="collapse" data-target="#clothing"  class="collapsed">
                                         <ul class="sub-menu collapse show" id="clothing">
-                                            @foreach ($category as $value)
+                                            {{-- @foreach ($category as $value)
                                             <li>
-                                                <a class="nav-link" href="{{route('category_product',['id'=>$value->categoryID])}}">{{$value->categoryName}}</a>
+                                                <a href="{{route('category_product',['id'=>$value->categoryID])}}">{{$value->categoryName}}</a>
                                             </li>
-                                            @endforeach
+                                            @endforeach --}}
                                         </ul>
                                     </li>
                                 </ul>
@@ -250,15 +250,15 @@
                         </div>
 
                         <div class="row">
-                            @foreach ($data as $row)
+                            @foreach ($product as $row)
                                 <!-- Single Product -->
                                 <div class="col-12 col-sm-6 col-lg-4">
                                     <div class="single-product-wrapper">
                                         <!-- Product Image -->
                                         <div class="product-img">
-                                            <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" alt="" style="width: 200px; height: 150px">  <!-- img1 -->
+                                            <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" alt="" style="width: 250px; height: 150px">  <!-- img1 -->
                                             <!-- Hover Thumb -->
-                                            <img class="hover-img" src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage2}}" alt="" style="width: 200px; height: 150px"> <!-- img2 -->
+                                            <img class="hover-img" src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage2}}" alt="" style="width: 250px; height: 150px"> <!-- img2 -->
                                             <!-- Favourite -->
                                             <div class="product-favourite">
                                                 <a href="#" class="favme fa fa-heart"></a>
@@ -270,7 +270,7 @@
                                             <a href="{{url('singleProduct/'. $row->productID)}}"> 
                                                 <h6>{{$row->productName}}</h6> <!-- name Product -->
                                             </a>
-                                            <a class="product-price">{{$row->productPrice}}$</a>
+                                            <a class="product-price">{{$row->productPrice}}</a>
 
                                             <!-- Hover Content -->
                                             <div class="hover-content">

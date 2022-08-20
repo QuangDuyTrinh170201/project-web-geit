@@ -20,8 +20,10 @@ Route::get('/', function (){
     return view('welcome');
 });
 
-// Route::get('/home', [FrontendController::class, 'index'])->name('home');
-Route::get('/Admin-Home', [AdminController::class, 'indexAdmin'])->name('Admin-Home');
+Route::get('/login-adm', [AdminController::class, 'loginAdm'])->middleware('alreadyLoggedInAdmin');
+Route::post('login-admin', [AdminController::class, 'loginAdmin'])->name('login-admin');
+Route::get('/Admin-Home', [AdminController::class, 'indexAdmin'])->middleware('isLoggedInAdmin');
+Route::get('/logoutAdm', [AdminController::class, 'logoutAdmin']);
 Route::get('/data-table', [AdminController::class, 'dataTable'])->name('data-table');
 Route::get('/data-category', [AdminController::class, 'dataCat'])->name('data-category');
 Route::get('/add', [AdminController::class, 'categoryShow'])->name('add');
@@ -35,6 +37,7 @@ Route::get('deleteCategory/{id}', [AdminController::class, 'deleteCate']);
 Route::get('getInfoCategory/{id}', [AdminController::class, 'getInfoCate']);
 Route::post('updateCategory', [AdminController::class, 'updateCategory']);
 
+
 //Login-Signup
 Route::get('/login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('/registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
@@ -43,5 +46,8 @@ Route::post('login-user', [AuthController::class, 'loginUser'])->name('login-use
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('isLoggedIn');
 Route::get('/logout', [AuthController::class, 'logOut']);
 
+
 //xu ly product va single product
 Route::get('product',[Productcontroller::class, 'index']);
+Route::get('/category/{id}',[Productcontroller::class, 'category'])->name('category_product');
+Route::get('singleProduct/{id}', [Productcontroller::class, 'details']);

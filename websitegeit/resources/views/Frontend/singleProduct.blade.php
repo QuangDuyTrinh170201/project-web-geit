@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Geit Stop Home</title>
+    <title>single-Product</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ url('public') }}/Frontend/img/core-img/favicon.ico">
@@ -17,14 +17,13 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/css/core-style.css">
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
+    
 
 
 </head>
 
 <body>
-
+    
     <!-- ##### Header Area Start ##### -->
     <header class="header_area">
         <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -126,8 +125,7 @@
 
         <!-- Cart Button -->
         <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg"
-                    alt=""> <span>3</span></a>
+            <a href="#" id="rightSideCart"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg" alt=""> <span>3</span></a>
         </div>
 
         <div class="cart-content d-flex">
@@ -137,16 +135,14 @@
                 <!-- Single Cart Item -->
                 <div class="single-cart-item">
                     <a href="#" class="product-image">
-                        <img src="" class="cart-thumb" alt="">
-                        <!--img1-->
+                        <img src="" class="cart-thumb" alt=""><!--img1-->
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
-                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <h6></h6>
-                            <!--Nameproduct-->
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <h6>Product Name</h6><!--Nameproduct-->
                             <p class="quantity"></p>
                             <p class="color"></p>
-                            <p class="price"></p>
+                            <p class="price">Product Price</p>
                         </div>
                     </a>
                 </div>
@@ -170,134 +166,54 @@
     </div>
     <!-- ##### Right Side Cart End ##### -->
 
-    <!-- ##### Welcome Area Start ##### -->
-    <section class="welcome_area bg-img background-overlay"
-        style="background-image: url({{ url('public') }}/Frontend/img/bg-img/Banner1.png); ">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <marquee>
-                            <h2> Men Are The Country's Precious Assets.</h2>
-                        </marquee>
+    <!-- ##### Single Product Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+        <!-- Single Product Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage1}}" alt="" style="width: 700px; height: 550px">
+                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage2}}" alt="" style="width: 700px; height: 550px">
+            </div>
+        </div>
 
+        <!-- Single Product Description -->
+        <div class="single_product_desc clearfix">
+           
+            
+            <!-- Form -->
+            <form class="cart-form clearfix" method="post">
+                <!-- Select Box -->
+                
+                <div class="product-description">
+                    <a> 
+                        <h2>{{$data->productName}}</h2> <!-- name Product -->
+                    </a>
+                    <a class="product-price">{{$data->productPrice}}$</a>
+                    <hr>
+                    <a class="product details">
+                        <h6>{{$data->productDetail}}</h6>
+                    </a>
+                </div>
+
+                <div class="select-box d-flex mt-50 mb-30">
+
+                    <label class="md-03" for="form-label" id="id"></label>
+                    <input type="date" name="Purchase Date" class="form-control" placeholder="Purchase Date" >
+
+                </div>
+                <!-- Cart & Favourite Box -->
+                <div class="cart-fav-box d-flex align-items-center">
+                    <!-- Cart -->
+                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                    <!-- Favourite -->
+                    <div class="product-favourite ml-4">
+                        <a href="#" class="favme fa fa-heart"></a>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
-    <!-- ##### Welcome Area End ##### -->
-
-    <!-- ##### Top Catagory Area Start ##### -->
-    <div class="top_catagory_area section-padding-80 clearfix">
-        <div class="container">
-            <div class="row justify-content-center">
-                <!-- Single Catagory -->
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                        style="background-image: url({{ url('public') }}/Frontend/img/bg-img/producttechnology.jpg);">
-                        <div class="catagory-content">
-                            <a href="camera-product.html">Technology</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Catagory -->
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                        style="background-image: url({{ url('public') }}/Frontend/img/bg-img/life.jpg);">
-                        <div class="catagory-content">
-                            <a href="clothing-fashion-product.html">Life</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Catagory -->
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                        style="background-image: url({{ url('public') }}/Frontend/img/bg-img/bg-4.jpg);">
-                        <div class="catagory-content">
-                            <a href="Electronic-product.html">Accessories</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Top Catagory Area End ##### -->
-
-    <!-- ##### CTA Area Start ##### -->
-    <div class="cta-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-content bg-img background-overlay"
-                        style="background-image: url({{ url('public') }}/Frontend/img/bg-img/bg-5.jpg);">
-                        <div class="h-100 d-flex align-items-center justify-content-end">
-                            <div class="cta--text">
-                                <h6>-60%</h6>
-                                <h2>Global Sale</h2>
-                                <a href="camera-product.html" class="btn essence-btn">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### CTA Area End ##### -->
-
-    <!-- ##### New Arrivals Area Start ##### -->
-    <section class="new_arrivals_area section-padding-80 clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>Popular Products</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="popular-products-slides owl-carousel">
-
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img src="" alt=""> <!-- img1 -->
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="" alt=""><!-- img1 -->
-                                <!-- Favourite -->
-                                <div class="product-favourite">
-                                    <a href="#" class="favme fa fa-heart"></a>
-                                </div>
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                                <span></span> <!-- Product Brand -->
-                                <a href="single-product-details.html">
-                                    <h6></h6> <!-- Name -->
-                                </a>
-                                <p class="product-price"></p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### New Arrivals Area End ##### -->
+    <!-- ##### Single Product Details Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer_area clearfix">
@@ -308,8 +224,7 @@
                     <div class="single_widget_area d-flex mb-30">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="#"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png"
-                                    alt=""></a>
+                            <a href="#"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png" alt=""></a>
                         </div>
                         <!-- Footer Menu -->
                         <div class="footer_menu">
@@ -317,6 +232,7 @@
                                 <li><a href="camera-product.html">Shop</a></li>
                                 <li><a href="AboutUs.html">About</a></li>
                                 <li><a href="contact.html">Contact</a></li>
+                                <li><a href="Admin/index.html">Admin</a></li>
                             </ul>
                         </div>
                     </div>
@@ -344,10 +260,9 @@
                             <h6>Subscribe</h6>
                         </div>
                         <div class="subscribtion_form">
-                            <form action="https://accounts.google.com/ServiceLogin" method="post">
+                            <form action="#" method="post">
                                 <input type="email" name="mail" class="mail" placeholder="Your email here">
-                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
-                                        aria-hidden="true"></i></button>
+                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
                             </form>
                         </div>
                     </div>
@@ -356,32 +271,22 @@
                 <div class="col-12 col-md-6">
                     <div class="single_widget_area">
                         <div class="footer_social_area">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                                    class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                                    class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i
-                                    class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
-                                    class="fa fa-pinterest" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
-                                    class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row mt-5">
+<div class="row mt-5">
                 <div class="col-md-12 text-center">
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | Made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>,
-                        distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>, distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
             </div>
