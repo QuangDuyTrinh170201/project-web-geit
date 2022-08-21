@@ -26,14 +26,15 @@ Route::get('/Admin-Home', [AdminController::class, 'indexAdmin'])->middleware('i
 Route::get('/logoutAdm', [AdminController::class, 'logoutAdmin']);
 
 Route::get('/data-table', [AdminController::class, 'dataTable'])->name('data-table');
-Route::get('/data-category', [AdminController::class, 'dataCat'])->name('data-category');
 Route::get('/add', [AdminController::class, 'categoryShow'])->name('add');
 Route::post('/save', [AdminController::class, 'addData'])->name('save');
-Route::get('/add-Category', [AdminController::class, 'addCat']);
 Route::post('/saveCategory', [AdminController::class, 'saveCate']);
 Route::get('delete/{id}', [AdminController::class, 'delete']);
 Route::get('getInfo/{id}', [AdminController::class, 'getInfo']);
 Route::post('update', [AdminController::class, 'update']);
+//admin category management
+Route::get('/data-category', [AdminController::class, 'dataCat'])->name('data-category');
+Route::get('/add-Category', [AdminController::class, 'addCat']);
 Route::get('deleteCategory/{id}', [AdminController::class, 'deleteCate']);
 Route::get('getInfoCategory/{id}', [AdminController::class, 'getInfoCate']);
 Route::post('updateCategory', [AdminController::class, 'updateCategory']);

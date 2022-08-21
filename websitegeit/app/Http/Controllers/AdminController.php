@@ -191,6 +191,8 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Customer deleted successfully!');
     }
 
+
+    
     // Controller for manage Review
     public function dataReview()
     {

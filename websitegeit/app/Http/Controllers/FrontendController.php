@@ -22,6 +22,7 @@ class FrontendController extends Controller
         return view('Frontend.contact');
     }
 
+    //update customer
     public function getInfoCustomer($id)
     {
         $data = Tbcustomer::where('customerID', '=', $id)->first();
