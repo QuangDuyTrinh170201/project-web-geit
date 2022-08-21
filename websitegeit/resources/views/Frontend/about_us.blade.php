@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>single-Product</title>
+    <title>About Us</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ url('public') }}/Frontend/img/core-img/favicon.ico">
@@ -30,8 +30,7 @@
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png"
-                        alt=""></a>
+                <a class="nav-brand" href="index.html"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png" alt=""></a>
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -72,151 +71,128 @@
                     </form>
                 </div>
                 <!-- Favourite Area -->
+                <div class="favourite-area">
+                    <a href="#"><img src="{{ url('public') }}/Frontend/img/core-img/heart.svg" alt=""></a>
+                </div>
+                <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="{{ url('login') }}"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg"
-                            alt=""></a>
+                    <a href="login.html"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
                 </div>
-
+                <!-- Cart Area -->
                 <div class="cart-area">
-                    <a href="#" id="essenceCartBtn"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg"
-                            alt=""> <span>3</span></a>
-                </div>
-                <div class="dropdown" class="login-information" style="float:right;">
-                    <a href="#">
-                        <img src="{{ url('public') }}/Frontend/img/core-img/profile.svg" alt=""
-                            style="padding-top: 15px"></a>
-                    <div class="dropdown-content">
-                        <div class="container">
-                            <div class="col-md-4 col-md-offset-4" style="margin-top:20px; text-align:center;">
-                                <hr>
-                                <table class="table">
-                                    <thead>
-                                        {{-- <th>Name</th>
-                                        <th>Email</th> --}}
-                                        <th>Action</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            {{-- <td>{{ $data->customerName }}</td>
-                                            <td>{{ $data->customerPhone }}</td> --}}
-                                            <td><a href="{{ url('logout') }}">Log Out</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="#" id="essenceCartBtn"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg" alt=""> <span>3</span></a>
                 </div>
             </div>
-            <!---->
-        </div>
-        <!-- User Login Info -->
-        <!-- Cart Area -->
-        </div>
 
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Right Side Cart Area ##### -->
-    <div class="cart-bg-overlay"></div>
+  <!-- ##### Right Side Cart Area ##### -->
+  <div class="cart-bg-overlay"></div>
 
-    <div class="right-side-cart-area">
+  <div class="right-side-cart-area">
 
-        <!-- Cart Button -->
-        <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg" alt=""> <span>3</span></a>
-        </div>
+      <!-- Cart Button -->
+      <div class="cart-button">
+          <a href="#" id="rightSideCart"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg" alt=""> <span>3</span></a>
+      </div>
 
-        <div class="cart-content d-flex">
+      <div class="cart-content d-flex">
 
-            <!-- Cart List Area -->
-            <div class="cart-list">
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="" class="cart-thumb" alt=""><!--img1-->
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <h6>Product Name</h6><!--Nameproduct-->
-                            <p class="quantity"></p>
-                            <p class="color"></p>
-                            <p class="price">Product Price</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+          <!-- Cart List Area -->
+          <div class="cart-list">
+              <!-- Single Cart Item -->
+              <div class="single-cart-item">
+                  <a href="#" class="product-image">
+                      <img src="" class="cart-thumb" alt=""><!--img1-->
+                      <!-- Cart Item Desc -->
+                      <div class="cart-item-desc">
+                        <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                          <h6></h6><!--Nameproduct-->
+                          <p class="quantity"></p>
+                          <p class="color"></p>
+                          <p class="price"></p>
+                      </div>
+                  </a>
+              </div>
+          </div>
 
-            <!-- Cart Summary -->
-            <div class="cart-amount-summary">
+          <!-- Cart Summary -->
+          <div class="cart-amount-summary">
 
-                <h2>Summary</h2>
-                <ul class="summary-table">
-                    <li><span>subtotal:</span> <span>$274.00</span></li>
-                    <li><span>delivery:</span> <span>Free</span></li>
-                    <li><span>discount:</span> <span>-15%</span></li>
-                    <li><span>total:</span> <span>$232.00</span></li>
-                </ul>
-                <div class="checkout-btn mt-100">
-                    <a href="checkout.html" class="btn essence-btn">check out</a>
+              <h2>Summary</h2>
+              <ul class="summary-table">
+                  <li><span>subtotal:</span> <span>$274.00</span></li>
+                  <li><span>delivery:</span> <span>Free</span></li>
+                  <li><span>discount:</span> <span>-15%</span></li>
+                  <li><span>total:</span> <span>$232.00</span></li>
+              </ul>
+              <div class="checkout-btn mt-100">
+                  <a href="checkout.html" class="btn essence-btn">check out</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Right Side Cart End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url({{ url('public') }}/Frontend/img/bg-img/breadcumb2.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>About Us</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ##### Right Side Cart End ##### -->
+    <!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Single Product Details Area Start ##### -->
-    <section class="single_product_details_area d-flex align-items-center">
-        <!-- Single Product Thumb -->
-        <div class="single_product_thumb clearfix">
-            <div class="product_thumbnail_slides owl-carousel">
-                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage1}}" alt="" style="width: 700px; height: 550px">
-                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage2}}" alt="" style="width: 700px; height: 550px">
-            </div>
-        </div>
+    <!-- ##### Blog Wrapper Area Start ##### -->
+    <div class="blog-wrapper section-padding-80">
+        <div class="container">
+            <div class="row">
 
-        <!-- Single Product Description -->
-        <div class="single_product_desc clearfix">
-           
-            
-            <!-- Form -->
-            <form class="cart-form clearfix" method="post">
-                <!-- Select Box -->
-                
-                <div class="product-description">
-                    <a> 
-                        <h2>{{$data->productName}}</h2> <!-- name Product -->
-                    </a>
-                    <a class="product-price">{{$data->productPrice}}$</a>
-                    <hr>
-                    <a class="product details">
-                        <h6>{{$data->productDetail}}</h6>
-                    </a>
-                </div>
-
-                <div class="select-box d-flex mt-50 mb-30">
-
-                    <label class="md-03" for="form-label" id="id"></label>
-                    <input type="date" name="Purchase Date" class="form-control" placeholder="Purchase Date" >
-
-                </div>
-                <!-- Cart & Favourite Box -->
-                <div class="cart-fav-box d-flex align-items-center">
-                    <!-- Cart -->
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
-                    <!-- Favourite -->
-                    <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-area mb-50">
+                        <img src="{{ url('public') }}/Frontend/img/bg-img/blog1.jpg" alt="">
+                        <!-- Post Title -->
                     </div>
                 </div>
-            </form>
+              
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-area mb-50">
+                        <img src="{{ url('public') }}/Frontend/img/bg-img/blog2.jpg" alt="">
+                        <!-- Post Title -->
+                    </div>
+                </div>
+                <div> 
+                    <figure>
+                        <blockquote cite="https://www.huxley.net/bnw/four.html">
+                            <dl>
+                                <dd>
+                                    <p >
+                                       GeitStop is a newly form star-up, completely different with any other shop tht you have known. We focus on bring you products which satisfied your hobbies needs. We hope to serve and connect youthful, energetic man with hobbies. GeitStop seem familiar with some of you, in fact, we came from some online communities, which connect people who love photography, motorbike, etc. Come join us, you will get to known the best hobbies connection with most professional specialist. 
+                                    </p>
+                                </dd>
+                            </dl>
+                            
+                        </blockquote>
+                        <figcaption> <cite>-- Founder GeitStop --</cite></figcaption>
+                    </figure>
+                </div>
+               
+            </div>
         </div>
-    </section>
-    <!-- ##### Single Product Details Area End ##### -->
+    </div>
+    <!-- ##### Blog Wrapper Area End ##### -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer_area clearfix">
+     <!-- ##### Footer Area Start ##### -->
+     <footer class="footer_area clearfix">
         <div class="container">
             <div class="row">
                 <!-- Single Widget Area -->
@@ -230,7 +206,7 @@
                         <div class="footer_menu">
                             <ul>
                                 <li><a href="camera-product.html">Shop</a></li>
-                                <li><a href="AboutUs.html">About</a></li>
+                                <li><a href="blog.html">Blog</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="Admin/index.html">Admin</a></li>
                             </ul>
@@ -307,6 +283,9 @@
     <script src="{{ url('public') }}/Frontend/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="{{ url('public') }}/Frontend/js/active.js"></script>
+    <!--Map js-->
+    <script src="{{ url('public') }}/Frontend/js/map.js"></script>
+
 
 </body>
 

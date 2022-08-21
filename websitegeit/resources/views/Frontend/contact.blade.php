@@ -9,29 +9,27 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>single-Product</title>
+    <title>Contact</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ url('public') }}/Frontend/img/core-img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/css/core-style.css">
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/style.css">
-    
-
+    <link rel="stylesheet" href="{{ url('public') }}/Frontend/css/util.css">
 
 </head>
 
 <body>
-    
     <!-- ##### Header Area Start ##### -->
     <header class="header_area">
         <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png"
-                        alt=""></a>
+                <a class="nav-brand" href="index.html"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png" alt=""></a>
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -72,47 +70,18 @@
                     </form>
                 </div>
                 <!-- Favourite Area -->
+                <div class="favourite-area">
+                    <a href="#"><img src="{{ url('public') }}/Frontend/img/core-img/heart.svg" alt=""></a>
+                </div>
+                <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="{{ url('login') }}"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg"
-                            alt=""></a>
+                    <a href="login.html"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
                 </div>
-
+                <!-- Cart Area -->
                 <div class="cart-area">
-                    <a href="#" id="essenceCartBtn"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg"
-                            alt=""> <span>3</span></a>
-                </div>
-                <div class="dropdown" class="login-information" style="float:right;">
-                    <a href="#">
-                        <img src="{{ url('public') }}/Frontend/img/core-img/profile.svg" alt=""
-                            style="padding-top: 15px"></a>
-                    <div class="dropdown-content">
-                        <div class="container">
-                            <div class="col-md-4 col-md-offset-4" style="margin-top:20px; text-align:center;">
-                                <hr>
-                                <table class="table">
-                                    <thead>
-                                        {{-- <th>Name</th>
-                                        <th>Email</th> --}}
-                                        <th>Action</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            {{-- <td>{{ $data->customerName }}</td>
-                                            <td>{{ $data->customerPhone }}</td> --}}
-                                            <td><a href="{{ url('logout') }}">Log Out</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="#" id="essenceCartBtn"><img src="{{ url('public') }}/Frontend/img/core-img/bag.svg" alt=""> <span>3</span></a>
                 </div>
             </div>
-            <!---->
-        </div>
-        <!-- User Login Info -->
-        <!-- Cart Area -->
-        </div>
 
         </div>
     </header>
@@ -139,10 +108,10 @@
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
                           <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <h6>Product Name</h6><!--Nameproduct-->
+                            <h6></h6><!--Nameproduct-->
                             <p class="quantity"></p>
                             <p class="color"></p>
-                            <p class="price">Product Price</p>
+                            <p class="price"></p>
                         </div>
                     </a>
                 </div>
@@ -165,55 +134,108 @@
         </div>
     </div>
     <!-- ##### Right Side Cart End ##### -->
-
-    <!-- ##### Single Product Details Area Start ##### -->
-    <section class="single_product_details_area d-flex align-items-center">
-        <!-- Single Product Thumb -->
-        <div class="single_product_thumb clearfix">
-            <div class="product_thumbnail_slides owl-carousel">
-                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage1}}" alt="" style="width: 700px; height: 550px">
-                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage2}}" alt="" style="width: 700px; height: 550px">
-            </div>
-        </div>
-
-        <!-- Single Product Description -->
-        <div class="single_product_desc clearfix">
-           
-            
-            <!-- Form -->
-            <form class="cart-form clearfix" method="post">
-                <!-- Select Box -->
-                
-                <div class="product-description">
-                    <a> 
-                        <h2>{{$data->productName}}</h2> <!-- name Product -->
-                    </a>
-                    <a class="product-price">{{$data->productPrice}}$</a>
-                    <hr>
-                    <a class="product details">
-                        <h6>{{$data->productDetail}}</h6>
-                    </a>
-                </div>
-
-                <div class="select-box d-flex mt-50 mb-30">
-
-                    <label class="md-03" for="form-label" id="id"></label>
-                    <input type="date" name="Purchase Date" class="form-control" placeholder="Purchase Date" >
-
-                </div>
-                <!-- Cart & Favourite Box -->
-                <div class="cart-fav-box d-flex align-items-center">
-                    <!-- Cart -->
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
-                    <!-- Favourite -->
-                    <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url({{ url('public') }}/Frontend/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Contact Us</h2>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </section>
-    <!-- ##### Single Product Details Area End ##### -->
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <section class="bg0 p-t-104 p-b-116">
+        <div class="container">
+            <div class="flex-w flex-tr">
+                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                    @if (Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{Session::get('success')}}
+                    </div>                    
+                    @endif
+                    <form action="{{url('saveReview')}}" method="POST">
+                        @csrf
+                        <h4 class="mtext-105 cl2 txt-center p-b-30">
+                            Send Us A Message
+                        </h4>
+
+                        <div class="md-03">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name/Or use Incognito">
+                            
+                        </div>
+
+                        <div class="md-3">
+                            <label class="form-label" for="id"></label>
+                            <textarea name="review" row ="5" class="form-control" placeholder="Enter Feedback Message"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center"> <button text="align-center" type="submit" class="btn btn-primary">submit</button></div>
+                        
+
+                    </form>
+                </div>
+
+                <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+                    <div class="flex-w w-full p-b-42">
+                        <span class="fs-18 cl5 txt-center size-211">
+                            <span class="lnr lnr-map-marker"></span>
+                        </span>
+
+                        <div class="size-212 p-t-2">
+                            <span class="mtext-110 ">
+                                <h5>Address:</h5> 
+                            </span>
+
+                            <p class="stext-115 cl6 size-213 p-t-18">
+                               68 Binh Gia, 13 ward, Tan Binh Distrit, Ho Chi Minh City
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex-w w-full p-b-42">
+                        <span class="fs-18 cl5 txt-center size-211">
+                            <span class="lnr lnr-phone-handset"></span>
+                        </span>
+
+                        <div class="size-212 p-t-2">
+                            <span class="mtext-110 ">
+                               <h5>Lets Talk:</h5> 
+                            </span>
+
+                            <p class="stext-115 cl1 size-213 p-t-18">
+                                +1 800 1236879
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex-w w-full">
+                        <span class="fs-18 cl5 txt-center size-211">
+                            <span class="lnr lnr-envelope"></span>
+                        </span>
+
+                        <div class="size-212 p-t-2">
+                            <span class="mtext-110 ">
+                                <h5>Sale Support:</h5>
+                            </span>
+
+                            <p class="stext-115 cl1 size-213 p-t-18">
+                                contact@example.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>	
+    
+    <div class="map">
+        <div class="size-303" id="google_map" data-map-x="10.801249687178068" data-map-y=" 106.64480315767148" data-pin="{{ url('public') }}/Frontend/img/bg-img/logoGS.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
+    </div>
+   
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer_area clearfix">
@@ -230,7 +252,7 @@
                         <div class="footer_menu">
                             <ul>
                                 <li><a href="camera-product.html">Shop</a></li>
-                                <li><a href="AboutUs.html">About</a></li>
+                                <li><a href="blog.html">Blog</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="Admin/index.html">Admin</a></li>
                             </ul>
@@ -251,7 +273,7 @@
                     </div>
                 </div>
             </div>
-
+              
             <div class="row align-items-end">
                 <!-- Single Widget Area -->
                 <div class="col-12 col-md-6">
@@ -292,6 +314,7 @@
             </div>
 
         </div>
+
     </footer>
     <!-- ##### Footer Area End ##### -->
 
@@ -307,6 +330,11 @@
     <script src="{{ url('public') }}/Frontend/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="{{ url('public') }}/Frontend/js/active.js"></script>
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
+    <script src="{{ url('public') }}/Frontend/js/map-active.js"></script>
+        <!--Map js-->
+        <script src="{{ url('public') }}/Frontend/js/map.js"></script>
 
 </body>
 

@@ -46,7 +46,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="{{ url('home') }}">Home</a></li>
+                            <li><a href="{{ url('dashboard') }}">Home</a></li>
                             <li><a href="{{url('product')}}">Shop</a>
                             </li>
                             <li><a href="#">Pages</a>
@@ -55,8 +55,8 @@
                                     <li><a href="checkout.html">Checkout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="AboutUs.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{url('about-us')}}">About</a></li>
+                            <li><a href="{{url('contact-us')}}">Contact</a></li>
                         </ul>
                     </div>
                     <!-- Nav End -->
@@ -94,12 +94,14 @@
                                     <thead>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>Edit information</th>
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>{{ $data->customerName }}</td>
                                             <td>{{ $data->customerPhone }}</td>
+                                            <td><a href="{{url('edit-profile/'.$data->customerID)}}">Edit Profile</a></td>
                                             <td><a href="{{ url('logout') }}">Log Out</a></td>
                                         </tr>
                                     </tbody>

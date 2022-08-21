@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tbproduct;
 use App\Models\Tbcategory;
+use App\Models\Tbcustomer;
 use App\Models\Tbadmin;
+use App\Models\Tbreview;
 use Session;
 
 class AdminController extends Controller
@@ -43,7 +45,7 @@ class AdminController extends Controller
             $data = Tbproduct::get();
         }
         // $data = Tbproduct::get();
-        return view('Admin.admin', compact('data'));
+        return view('Admin.admin', compact('dataAdmin', 'data'));
     }
 
     public function dataTable()
@@ -174,5 +176,31 @@ class AdminController extends Controller
             Session::pull('loginId');
             return redirect('login-adm');   
         }
+    }
+
+    // Controller for manage Customer
+    public function indexCustomer()
+    {
+        $data = Tbcustomer::get();
+        return view('Admin.dataCustomer', compact('data'));
+    }
+
+    public function deleteCustomer($id)
+    {
+        Tbcustomer::where('customerID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Customer deleted successfully!');
+    }
+
+    // Controller for manage Review
+    public function dataReview()
+    {
+        $data = Tbreview::get();
+        return view('Admin.showReview', compact('data'));
+    }
+
+    public function deleteReview($id)
+    {
+        Tbreview::where('reviewID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Review deleted successfully!');
     }
 }

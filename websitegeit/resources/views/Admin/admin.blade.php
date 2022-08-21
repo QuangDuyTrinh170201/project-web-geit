@@ -155,7 +155,7 @@
                                             <div id="submenu-1-2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="index.html">Dashboard</a>
+                                                        <a class="nav-link" href="{{url('Admin-Home')}}">Dashboard</a>
                                                     </li>
 
                                                 </ul>
@@ -177,7 +177,14 @@
                                     </ul>
                                 </div>
                             </li>
-                           
+                            <hr>
+                                <td colspan="3"><a href="{{url('data-customer')}}" class="btn btn-outline-light float-center">View Customer</a></td>
+                                <hr>
+                                <td colspan="2"><a href="{{url('data-table')}}" class="btn btn-outline-light float-center">View Details</a></td>
+                                <hr>
+                                <td colspan="1"><a href="{{url('data-category')}}" class="btn btn-outline-light float-center">View Categories</a></td>
+                                <hr>
+                                <td colspan="1"><a href="{{url('data-review')}}" class="btn btn-outline-light float-center">View Reviews</a></td>
                         </ul>
                     </div>
                 </nav>
@@ -305,14 +312,11 @@
                                                         <td>{{$row->productPrice}}</td>
                                                         <td>{{$row->productDetail}}</td>
                                                         <td><img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" width="150px" height="100px" alt=""/></td>
-                                                        <td>{{$row->categoryID}}</td>
+                                                        <td style="text-align: center;">{{$row->categoryID}}</td>
                                                         {{-- <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td> --}}
                                                     </tr>
                                                     @endforeach
-                                                    <tr>
-                                                        <td colspan="5"><a href="{{url('data-table')}}" class="btn btn-outline-light float-center">View Details</a></td>
-                                                        <td colspan="5"><a href="{{url('data-category')}}" class="btn btn-outline-light float-center">View Categories</a></td>
-                                                    </tr>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>

@@ -41,32 +41,8 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="{{ url('public') }}/Frontend/index.html">Home</a></li>
-                            <li><a href="#">Shop</a>
-                                <div class="megamenu">
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Technology</li>
-                                        <li><a href="camera-product.html">Camera</a></li>
-                                        <li><a href="motobike-product.html">Motobike</a></li>
-                                        <li><a href="game-consoles-product.html">Game consoles</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Life</li>
-                                        <li><a href="camera-product.html">Clothing fashion</a></li>
-                                        <li><a href="Men-cosmetics-product.html">Men's cosmetics</a></li>
-                                        <li><a href="nutritional-product.html">Nutritional food for men</a></li>
-                                
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Accessory:</li>
-                                        <li><a href="Electronic-product.html">Electronic accessories</a></li>
-                                        <li><a href="travel-product.html">Travel accessories</a></li>
-                                  
-                                    </ul>
-                                    <div class="single-mega cn-col-4">
-                                        <img src="{{ url('public') }}/Frontend/img/bg-img/bg-6.jpg" alt="">
-                                    </div>
-                                </div>
+                            <li><a href="{{ url('dashboard') }}">Home</a></li>
+                            <li><a href="{{url('product')}}">Shop</a>
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -74,8 +50,8 @@
                                     <li><a href="checkout.html">Checkout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="AboutUs.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{url('about-us')}}">About</a></li>
+                            <li><a href="{{url('contact-us')}}">Contact</a></li>
                         </ul>
                     </div>
                     <!-- Nav End -->

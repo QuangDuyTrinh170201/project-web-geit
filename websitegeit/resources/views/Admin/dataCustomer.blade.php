@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
-
+ 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Data Tables</title>
+    <title>Data Categories</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{url('public')}}/Admin/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="{{url('public')}}/Admin/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -27,7 +27,7 @@
         <!-- ============================================================== -->
          <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{{url('public')}}/Admin/index.html">GeitStop</a>
+                <a class="navbar-brand" href="{{url('public')}}/Admin/index.html">Concept</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -239,32 +239,26 @@ John Abraham</h5>
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Product Name</th>
-                                                <th>Product Price</th>
-                                                <th>Product Detail</th>
-                                                <th>Product Image</th>
-                                                <th>Category ID</th>
-                                                <th><a href="{{url('add')}}" class="btn btn-outline-warning">Add</a></th>
+                                                <th>Customer Account</th>
+                                                <th>Customer Name</th>
+                                                <th>Customer Phone</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $row)
                                                 <tr>
-                                                    <td>{{$row->productID}}</td>
-                                                    <td>{{$row->productName}}</td>
-                                                    <td>{{$row->productPrice}}</td>
-                                                    <td>{{$row->productDetail}}</td>
-                                                    <td><img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" width="150px" height="100px" alt=""/></td>
-                                                    <td>{{$row->categoryID}}</td>
+                                                    <td>{{$row->customerID}}</td>
+                                                    <td>{{$row->customerAccount}}</td>
+                                                    <td>{{$row->customerName}}</td>
+                                                    <td>{{$row->customerPhone}}</td>
                                                     <td>
-                                                    <a href="{{url('getInfo/'. $row->productID)}}" class="btn btn-success">Edit</a>
-                                                    <a href="{{url('delete/'. $row->productID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete?');">Delete</a>
+                                                    <a href="{{url('deleteCustomer/'. $row->customerID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete?');">Delete</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
-
+                                            
                                         </tbody>
-
+                                       
                                     </table>
                                 </div>
                             </div>
@@ -274,7 +268,7 @@ John Abraham</h5>
                     <!-- end basic table  -->
                     <!-- ============================================================== -->
                 </div>
-
+  
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
@@ -322,7 +316,7 @@ John Abraham</h5>
     <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
-
+    
 </body>
-
+ 
 </html>

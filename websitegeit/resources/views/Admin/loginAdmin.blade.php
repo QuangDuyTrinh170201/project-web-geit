@@ -47,6 +47,7 @@
 			<span class="text-danger">@error('password'){{$message}} @enderror</span>
 			<a href="#">Forgot your password?</a>
 			<button class="btn btn-block btn-primary" type="submit">Sign In</button>
+			<a href="{{url('/login')}}">Move To Login User</a>
 		</form>
 	</div>
 	<div class="overlay-container">

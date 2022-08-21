@@ -28,6 +28,7 @@
 			<span class="text-danger">@error('phone'){{$message}} @enderror</span>
 
 			<button class="btn btn-block btn-primary" type="submit">Sign Up</button>
+			
 		</form>
 	</div>
 
@@ -53,6 +54,7 @@
 			<span class="text-danger">@error('password'){{$message}} @enderror</span>
 			<a href="#">Forgot your password?</a>
 			<button class="btn btn-block btn-primary" type="submit">Sign In</button>
+			<a href="{{url('login-adm')}}">Move To Admin Page</a>
 		</form>
 	</div>
 	<div class="overlay-container">
