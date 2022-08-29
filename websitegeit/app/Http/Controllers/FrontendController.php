@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tbcustomer;
 use App\Models\Tbreview;
+use App\Models\Tbproduct;
+use App\Models\Tbcategory;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('Frontend.index');
+        $data = Tbproduct::all();
+        $category = Tbcategory::orderBy('categoryName', 'ASC')->get();
+        return view('Frontend.index', compact('data', 'category'));
     }
 
     public function abtUs()

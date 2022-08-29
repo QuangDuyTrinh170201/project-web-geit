@@ -34,14 +34,32 @@
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Product Name</h5></label>
                         <input type="text" name="name" class="form-control" placeholder="Enter product name" value="{{$data->productName}}">
+                        @error('name')
+                        <div class ="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Product Image1</h5></label>
-                        <input type="file" name="image1" class="form-control" placeholder="Enter product image">
+                        <input type="file" name="image1" class="form-control" placeholder="Enter product image" accept="image/*">
+                            <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage1}}" alt="This is image of {{$data->productName}}" height="150" width="150">
+                        @error('image1')
+                            <div class ="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                     </div>
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Product Image2</h5></label>
-                        <input type="file" name="image2" class="form-control" placeholder="Enter product image">
+                        <input type="file" name="image2" class="form-control" placeholder="Enter product image" accept="image/*">
+                            <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$data->productImage2}}" alt="This is image of {{$data->productName}}" height="150" width="150">
+                        @error('image2')
+                            <div class ="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
                     </div>
         
                     <div class="md-3">
@@ -50,16 +68,31 @@
                             @foreach ($categories as $row)                                
                                 <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
                             @endforeach
+                        @error('category')
+                            <div class ="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </select>
                     </div>
                     </div>
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Product Details</h5></label>
                         <textarea name="detail" row ="5" class="form-control" placeholder="Enter product details" value="{{$data->productDetail}}"></textarea>
+                        @error('detail')
+                            <div class ="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                     </div>
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Product Price</h5></label>
                         <input type="text" name="price" class="form-control" placeholder="Enter product price" value="{{$data->productPrice}}">
+                        @error('price')
+                            <div class ="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                     </div>
                     <div>
                         <br>

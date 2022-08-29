@@ -315,8 +315,7 @@
                                                         <td style="text-align: center;">{{$row->categoryID}}</td>
                                                         {{-- <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td> --}}
                                                     </tr>
-                                                    @endforeach
-                                                    
+                                                    @endforeach  
                                                 </tbody>
                                             </table>
                                         </div>

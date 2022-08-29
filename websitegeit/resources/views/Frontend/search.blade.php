@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>All Product</title>
+    <title>Search Product</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ url('public') }}/Frontend/img/core-img/favicon.ico">
@@ -63,8 +63,8 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="{{route('search')}}" method="get" role="search" id="searchform">
-                        <input type="text" name="search" id="headerSearch" placeholder="Enter search key">
+                    <form action="{{route('search')}}" method="get" >
+                        <input type="search" name="search" id="headerSearch" placeholder="Enter search key">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
@@ -140,7 +140,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>ALL PRODUCTS</h2>
+                        <h2>SEARCH PRODUCTS</h2>
                     </div>
                 </div>
             </div>
@@ -207,16 +207,16 @@
                                 <div class="product-topbar d-flex align-items-center justify-content-between">
                                     <!-- Total Products -->
                                     <div class="total-products">
-                                            <p><span>{{count($data)}}</span> products</p>
+                                        <p><span>{{count($product)}}</span> products found</p>
                                     </div>
                                     <!-- Sorting -->
                                     <div class="product-sorting d-flex">
                                         <p>Sort by:</p>
-                                        <form action="#" method="get" id = "form-order">
+                                        <form action="#" method="get">
                                             <select name="select" id="sortByselect">
                                                 <option value="value">Choose type of soft</option>
-                                                <option value="high-to-low">High to Low</option>
-                                                <option value="low-to-high">Low to High</option>
+                                                <option wire:model="priceInput" value="high-to-low">High to Low</option>
+                                                <option wire:model="priceInput" value="low-to-high">Low to High</option>
                                             </select>
                                             <input type="submit" class="d-none" value="">
                                         </form>
@@ -226,7 +226,7 @@
                         </div>
 
                         <div class="row">
-                            @foreach ($data as $row)
+                            @foreach ($product as $row)
                                 <!-- Single Product -->
                                 <div class="col-12 col-sm-6 col-lg-4">
                                     <div class="single-product-wrapper">
@@ -260,7 +260,7 @@
                                 </div>
                             @endforeach
                         </div>
-                                {{$data->links()}}
+                        {{$product->links()}}
                     </div>
                     <!-- Pagination -->
                     {{-- <nav aria-label="navigation">
@@ -272,7 +272,6 @@
                             <li class="page-item"><a class="page-link" href="#">...</a></li>
                             <li class="page-item"><a class="page-link" href="#">21</a></li>
                             <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                            {{$data->links()}}
                         </ul>
                     </nav> --}}
                 </div>

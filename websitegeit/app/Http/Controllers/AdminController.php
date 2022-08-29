@@ -12,6 +12,7 @@ use Session;
 
 class AdminController extends Controller
 {
+    
     public function loginAdm()
     {
         return view('Admin.loginAdmin');
@@ -63,6 +64,25 @@ class AdminController extends Controller
 
     public function addData(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|min:1|max:255',
+            'price' => 'required',
+            'detail' => 'required|min:1|max:255',
+            'image1' => 'required',
+            'image2' => 'required',
+            'category' => 'required',
+        ],
+        [
+			'name.required' => 'You are not enter name of product!',
+			'price.required' => 'You are not enter price of product!',
+			'detail.required' => 'You are not enter detail of product!',
+            'image1.required' => 'You are not enter image of product!',
+            'image2.required' => 'You are not enter image of product!',
+            'category.required' => 'You are not enter category of product!',
+		]
+    
+    );
         // $id = $request->id;
         $name = $request->name;
         $price = $request->price;
@@ -72,10 +92,9 @@ class AdminController extends Controller
 
         $image2 = $request->file('image2')->getClientOriginalName();
         $request->image2->move(public_path('Admin/assets/images/product-Image'),$image2);
-        $category = $request->category;
-
+        
+        $category = $request->category;               
         $product = new Tbproduct();
-
         // $product->productID = $id;
         $product->productName = $name;
         $product->productPrice = $price;
@@ -105,6 +124,24 @@ class AdminController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:1|max:255',
+            'price' => 'required',
+            'detail' => 'required|min:1|max:255',
+            'image1' => 'required',
+            'image2' => 'required',
+            'category' => 'required',
+        ],
+        [
+			'name.required' => 'You are not enter name of product!',
+			'price.required' => 'You are not enter price of product!',
+			'detail.required' => 'You are not enter detail of product!',
+            'image1.required' => 'You are not enter image of product!',
+            'image2.required' => 'You are not enter image of product!',
+            'category.required' => 'You are not enter category of product!',
+		]
+    );
+
         $id = $request->id;
         Tbproduct::where('productID', '=', $id)->update([
             'productName'=>$request->name,
@@ -135,6 +172,14 @@ class AdminController extends Controller
 
     public function saveCate(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:1|max:255',
+        ],
+        [
+			'name.required' => 'You are not enter name of category!',
+		]
+    );
+
         $name = $request->name;
         
         $cate = new Tbcategory();
@@ -160,6 +205,15 @@ class AdminController extends Controller
 
     public function updateCategory(Request $request)
     {
+
+        $this->validate($request,[
+            'name' => 'required|min:1|max:255',
+        ],
+        [
+			'name.required' => 'You are not enter name of category!',
+		]
+    );
+
         $id = $request->id;
         Tbcategory::where('categoryID', '=', $id)->update([
             'categoryName'=>$request->name,

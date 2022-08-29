@@ -30,7 +30,7 @@
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png"
+                <a class="nav-brand" href="#"><img src="{{ url('public') }}/Frontend/img/bg-img/logoGS.png"
                         alt=""></a>
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -50,8 +50,8 @@
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="single-product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="#">Product Details</a></li>
+                                    <li><a href="#">Checkout</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{url('about-us')}}">About</a></li>
@@ -66,7 +66,7 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
+                    <form action="{{route('search')}}" method="get" role="search" id="searchform">
                         <input type="search" name="search" id="headerSearch" placeholder="Type for search">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
@@ -229,9 +229,9 @@
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="camera-product.html">Shop</a></li>
-                                <li><a href="AboutUs.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{url('product')}}">Shop</a></li>
+                                <li><a href="{{url('about-us')}}">About</a></li>
+                                <li><a href="{{url('contact-us')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>

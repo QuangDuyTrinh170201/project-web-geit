@@ -67,7 +67,7 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
+                    <form action="{{route('search')}}" method="get" role="search" id="searchform">
                         <input type="search" name="search" id="headerSearch" placeholder="Type for search">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
@@ -261,16 +261,18 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                
+                    <div class="col-12">
                     <div class="popular-products-slides owl-carousel">
-
+                        @foreach ($data1 as $row)
                         <!-- Single Product -->
                         <div class="single-product-wrapper">
+                           
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="" alt=""> <!-- img1 -->
+                                <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" alt="" style="width: 200px; height: 150px"> <!-- img1 -->
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="" alt=""><!-- img1 -->
+                                <img class="hover-img" src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage2}}" alt="" style="width: 200px; height: 150px"><!-- img1 -->
                                 <!-- Favourite -->
                                 <div class="product-favourite">
                                     <a href="#" class="favme fa fa-heart"></a>
@@ -279,10 +281,10 @@
                             <!-- Product Description -->
                             <div class="product-description">
                                 <span></span> <!-- Product Brand -->
-                                <a href="single-product-details.html">
-                                    <h6></h6> <!-- Name -->
+                                <a href="{{url('singleProduct/'. $row->productID)}}">
+                                    <h6>{{$row->productName}}</h6> <!-- Name -->
                                 </a>
-                                <p class="product-price"></p>
+                                <p class="product-price">{{$row->productPrice}}</p>
 
                                 <!-- Hover Content -->
                                 <div class="hover-content">
@@ -293,7 +295,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -316,9 +318,9 @@
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="camera-product.html">Shop</a></li>
-                                <li><a href="AboutUs.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{url('product')}}">Shop</a></li>
+                                <li><a href="{{url('about-us')}}">About</a></li>
+                                <li><a href="{{url('contact-us')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>

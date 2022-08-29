@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>$category->categoryName Product</title>
+    <title>{{$category->categoryName}} Product</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ url('public') }}/Frontend/img/core-img/favicon.ico">
@@ -62,8 +62,8 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
-                        <input type="search" name="search" id="headerSearch" placeholder="Type for search">
+                    <form action="{{route('search')}}" method="get" role="search" id="searchform">
+                        <input type="search" name="search" id="headerSearch" placeholder="Enter search key">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
@@ -157,19 +157,19 @@
                         <!-- ##### Single Widget ##### -->
                         <div class="widget catagory mb-50">
                             <!-- Widget Title -->
-                            <h6 class="widget-title mb-30">Back To All Products</h6>
-                            <td colspan="5"><a href="{{url('product')}}" class="btn btn-light float-center">Back!!</a></td>
+                            <h6 class="widget-title mb-30">{{$category->categoryName}} Products</h6>
+                            {{-- <td colspan="5"><a href="{{url('product')}}" class="btn btn-light float-center">Back!!</a></td> --}}
                             <!--  Catagories  -->
                             <div class="catagories-menu">
                                 <ul id="menu-content2" class="menu-content collapse show">
                                     <!-- Single Item -->
                                     <li data-toggle="collapse" data-target="#clothing"  class="collapsed">
                                         <ul class="sub-menu collapse show" id="clothing">
-                                            {{-- @foreach ($category as $value)
+                                            @foreach ($category1 as $value)
                                             <li>
-                                                <a href="{{route('category_product',['id'=>$value->categoryID])}}">{{$value->categoryName}}</a>
+                                                <a class="nav-link" href="{{route('category_product',['id'=>$value->categoryID])}}">{{$value->categoryName}}</a>
                                             </li>
-                                            @endforeach --}}
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </ul>
@@ -206,17 +206,16 @@
                                 <div class="product-topbar d-flex align-items-center justify-content-between">
                                     <!-- Total Products -->
                                     <div class="total-products">
-                                        <p><span>186</span> products found</p>
+                                        <p><span>{{count($product)}}</span> products</p>
                                     </div>
                                     <!-- Sorting -->
                                     <div class="product-sorting d-flex">
                                         <p>Sort by:</p>
                                         <form action="#" method="get">
                                             <select name="select" id="sortByselect">
-                                                <option value="value">Highest Rated</option>
-                                                <option value="value">Newest</option>
-                                                <option value="value">Price: $$ - $</option>
-                                                <option value="value">Price: $ - $$</option>
+                                                <option value="value">Choose type of soft</option>
+                                                <option wire:model="priceInput" value="high-to-low">High to Low</option>
+                                                <option wire:model="priceInput" value="low-to-high">Low to High</option>
                                             </select>
                                             <input type="submit" class="d-none" value="">
                                         </form>
@@ -260,17 +259,19 @@
                                 </div>
                             @endforeach
                         </div>
+                            {{$product->links()}}
                     </div>
                     <!-- Pagination -->
                     <nav aria-label="navigation">
                         <ul class="pagination mt-50 mb-70">
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                            {{-- <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">...</a></li>
                             <li class="page-item"><a class="page-link" href="#">21</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li> --}}
+                            
                         </ul>
                     </nav>
                 </div>
@@ -293,9 +294,9 @@
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{url('product')}}">Shop</a></li>
+                                <li><a href="{{url('about-us')}}">About</a></li>
+                                <li><a href="{{url('contact-us')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>

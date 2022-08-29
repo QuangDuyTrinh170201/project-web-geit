@@ -2,6 +2,12 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+use App\Models\Tbproduct;
+use App\Models\Tbcategory;
+use App\Models\Tbcustomer;
+use App\Models\Tbadmin;
+use App\Models\Tbreview;
+use livewire\Component;
 
 define('LARAVEL_START', microtime(true));
 
@@ -53,3 +59,35 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+
+// class index extends Component {
+//     public $priceInput;
+
+//     protected $queryString = [
+//         'priceInput' => ['except' => '', 'as' => price]
+//     ];
+
+//     public function render()
+//     {
+
+//         $this->products = Tbproduct::where('categoryID', $this->category->id)
+//             // ->when($this->brandInputs, function ($q) {
+//             //     $q->whereIn('brand', $this->brandInputs);
+//             // })
+//             ->when($this->priceInput, function ($q) {
+//                 $q->when($this->priceInput == 'high-to-low', function ($q2) {
+//                     $q2->orderBy('productPrice', 'DESC');
+//                 })
+//                     ->when($this->priceInput == 'low-to-high', function ($q2) {
+//                         $q2->orderBy('productPrice', 'ASC');
+//                     });
+//             })
+//             ->get();
+//         $products = Tbproduct::orderBy('productID', 'DESC')->paginate(5);
+//         return view('livewire.Frontend.product', [
+//             'products' => $this->tbproducts,
+//             'category' => $this->category,
+//             'products' => $products
+//         ]);
+//     }
+// }

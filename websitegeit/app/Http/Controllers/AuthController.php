@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tbcustomer;
+use App\Models\Tbproduct;
 use Hash;
 use Session;
 
@@ -62,10 +63,11 @@ class AuthController extends Controller
     public function dashboard()
     {
         $data = array();
+        $data1 = Tbproduct::get();
         if(Session::has('loginId')){
             $data = Tbcustomer::where('customerID', '=', Session::get('loginId'))->first();
         }
-        return view('Frontend.index', compact('data'));
+        return view('Frontend.index', compact('data', 'data1'));
     }
 
     public function logOut(){

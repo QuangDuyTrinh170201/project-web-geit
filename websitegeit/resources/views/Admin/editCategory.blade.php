@@ -34,6 +34,11 @@
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Category Name</h5></label>
                         <input type="text" name="name" class="form-control" placeholder="Enter product name" value="{{$data->categoryName}}">
+                        @error('name')
+                        <div class ="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                         <br>
                         <button type = "submit" class="btn btn-primary">SUBMIT</button>

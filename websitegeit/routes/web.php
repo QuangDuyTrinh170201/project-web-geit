@@ -66,4 +66,5 @@ Route::get('singleProduct/{id}', [Productcontroller::class, 'details']);
 Route::get('about-us', [FrontendController::class, 'abtUs']);
 Route::get('contact-us', [FrontendController::class, 'contact']);
 
-
+//search function
+Route::get('/search', [Productcontroller::class, 'getSearch'])->name('search');

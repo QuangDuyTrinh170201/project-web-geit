@@ -251,9 +251,9 @@
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="camera-product.html">Shop</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{url('product')}}">Shop</a></li>
+                                <li><a href="{{url('about-us')}}">About</a></li>
+                                <li><a href="{{url('contact-us')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
