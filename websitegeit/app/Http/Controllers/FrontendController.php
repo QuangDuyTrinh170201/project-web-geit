@@ -36,9 +36,15 @@ class FrontendController extends Controller
     public function updateCustomer(Request $request)
     {
         $id = $request->id;
+        $name = $request->name;
+        $phone = $request->phone;
+        $image = $request->file('image')->getClientOriginalName();
+        $request->image->move(public_path('/Frontend/img/core-img'),$image);
+
         Tbcustomer::where('customerID', '=', $id)->update([
-            'customerName'=>$request->name,
-            'customerPhone'=>$request->phone
+            'customerName'=>$name,
+            'customerPhone'=>$phone,
+            'customerImage' =>$image
         ]);
 
         return redirect()->back()->with('success', 'Customer updated successfully!');

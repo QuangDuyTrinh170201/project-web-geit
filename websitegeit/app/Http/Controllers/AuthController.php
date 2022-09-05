@@ -23,7 +23,7 @@ class AuthController extends Controller
     public function registerUser(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'username' => 'required|unique:tbcustomers,customerAccount',
             'password' => 'required|min:8|max:16',
             'fullname' => 'required|min:8|max:32',
             'phone' => 'required|min:9|max:11',

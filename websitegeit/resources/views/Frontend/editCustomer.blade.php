@@ -26,7 +26,7 @@
                     </div>                    
                 @endif
                 
-                <form action="{{url('updateCustomer')}}" method="POST">
+                <form action="{{url('updateCustomer')}}" method="POST" enctype="multipart/form-data">
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Customer ID</h5></label>
                         <input type="text" name="id" class="form-control" placeholder="Enter your name" value="{{$data->customerID}}" readonly>
@@ -39,6 +39,16 @@
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Customer Phone</h5></label>
                         <input type="text" name="phone" class="form-control" placeholder="Enter your phone" value="{{$data->customerPhone}}">
+                    </div>
+                    <div class="md-3">
+                        <label class="form-label" for="id"><h5 id ="txt-h2">Customer Avatar</h5></label>
+                        <input type="file" name="image" class="form-control" placeholder="Enter product image" accept="image/*">
+                            <img src="{{url('public')}}/Frontend/img/core-img/{{$data->customerImage}}" alt="This is image of {{$data->customerImage}}" height="150" width="150">
+                        @error('image1')
+                            <div class ="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                     </div>
                     <div>
                         <br>

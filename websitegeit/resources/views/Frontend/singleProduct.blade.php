@@ -181,30 +181,32 @@
            
             
             <!-- Form -->
-            <form class="cart-form clearfix" method="post">
-                <!-- Select Box -->
-                
+            <form action="{{url('cart-save')}}" method="post">
+                @csrf
                 <div class="product-description">
-                    <a> 
-                        <h2>{{$data->productName}}</h2> <!-- name Product -->
+                    <a type="hidden">
+                        <h2>ID: {{$data->productID}}</h2>
                     </a>
-                    <a class="product-price">{{$data->productPrice}}$</a>
+                    <a> 
+                        <h2>Name: {{$data->productName}}</h2> <!-- name Product -->
+                    </a>
+                    <a class="product-price">Price: {{$data->productPrice}}$</a>
                     <hr>
                     <a class="product details">
-                        <h6>{{$data->productDetail}}</h6>
+                        <h6>Details: {{$data->productDetail}}</h6>
                     </a>
                 </div>
 
                 <div class="select-box d-flex mt-50 mb-30">
 
                     <label class="md-03" for="form-label" id="id"></label>
-                    <input type="date" name="Purchase Date" class="form-control" placeholder="Purchase Date" >
+                    <input type="date" name="date" class="form-control" placeholder="Purchase Date">
 
                 </div>
                 <!-- Cart & Favourite Box -->
                 <div class="cart-fav-box d-flex align-items-center">
                     <!-- Cart -->
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                    <button type="submit" class="btn essence-btn">Add to cart</button>
                     <!-- Favourite -->
                     <div class="product-favourite ml-4">
                         <a href="#" class="favme fa fa-heart"></a>

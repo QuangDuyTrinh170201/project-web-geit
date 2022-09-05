@@ -143,13 +143,23 @@ class AdminController extends Controller
     );
 
         $id = $request->id;
+        $name = $request->name;
+        $price = $request->price;
+        $detail = $request->detail;
+        $image1 = $request->file('image1')->getClientOriginalName();
+        $request->image1->move(public_path('Admin/assets/images/product-Image'),$image1);
+
+        $image2 = $request->file('image2')->getClientOriginalName();
+        $request->image2->move(public_path('Admin/assets/images/product-Image'),$image2);
+    
+        $category = $request->category;
         Tbproduct::where('productID', '=', $id)->update([
-            'productName'=>$request->name,
-            'productPrice'=>$request->price,
-            'productDetail'=>$request->detail,
-            'productImage1'=>$request->image1,
-            'productImage2'=>$request->image2,
-            'categoryID'=>$request->category
+            'productName'=>$name,
+            'productPrice'=>$price,
+            'productDetail'=>$detail,
+            'productImage1'=>$image1,
+            'productImage2'=>$image2,
+            'categoryID'=>$category
         ]);
 
         return redirect()->back()->with('success', 'Product updated successfully!');

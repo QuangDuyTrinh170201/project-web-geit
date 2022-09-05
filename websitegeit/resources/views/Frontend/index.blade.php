@@ -84,8 +84,8 @@
                 </div>
                 <div class="dropdown" class="login-information" style="float:right;">
                     <a href="#">
-                        <img src="{{ url('public') }}/Frontend/img/core-img/profile.svg" alt=""
-                            style="padding-top: 15px"></a>
+                        <img src="{{ url('public') }}/Frontend/img/core-img/{{$data->customerImage}}" alt=""
+                            style="padding-top: 15px; height:70px; width: 50px"></a>
                     <div class="dropdown-content">
                         <div class="container">
                             <div class="col-md-4 col-md-offset-4" style="margin-top:20px; text-align:center;">
@@ -93,7 +93,7 @@
                                 <table class="table">
                                     <thead>
                                         <th>Name</th>
-                                        <th>Email</th>
+                                        <th>Phone</th>
                                         <th>Edit information</th>
                                         <th>Action</th>
                                     </thead>
