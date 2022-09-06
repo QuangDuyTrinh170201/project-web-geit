@@ -43,16 +43,39 @@ class AdminController extends Controller
         $dataAdmin = array();
         if(Session::has('loginId')){
             $dataAdmin = Tbadmin::where('adminID', '=', Session::get('loginId'))->first();
-            $data = Tbproduct::get();
         }
-        // $data = Tbproduct::get();
-        return view('Admin.admin', compact('dataAdmin', 'data'));
+        return view('Admin.admin', compact('dataAdmin'));
     }
 
     public function dataTable()
     {
         $data = Tbproduct::get();
         return view('Admin.dataTable', compact('data'));
+    }
+
+    public function getInfoAdmin($id)
+    {
+        $data = Tbadmin::where('adminID', '=', $id)->first();
+        return view('Admin.adminEdit', compact('data'));
+    }
+
+    public function updateAdmin(Request $request)
+    {
+        $id = $request->id;
+        $name = $request->name;
+        $phone = $request->phone;
+        $image = $request->file('image')->getClientOriginalName();
+        $request->image->move(public_path('/Admin/assets/images/admin-image'),$image);
+        $position = $request->position;
+
+        Tbadmin::where('adminID', '=', $id)->update([
+            'adminName'=>$name,
+            'adminPhone'=>$phone,
+            'adminImage' =>$image,
+            'adminPosition' =>$position
+        ]);
+
+        return redirect()->back()->with('success', 'Admin updated successfully!');
     }
 
     

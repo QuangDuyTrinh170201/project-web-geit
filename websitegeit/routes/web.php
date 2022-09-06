@@ -24,6 +24,8 @@ Route::get('/login-adm', [AdminController::class, 'loginAdm'])->middleware('alre
 Route::post('login-admin', [AdminController::class, 'loginAdmin'])->name('login-admin');
 Route::get('/Admin-Home', [AdminController::class, 'indexAdmin'])->middleware('isLoggedInAdmin');
 Route::get('/logoutAdm', [AdminController::class, 'logoutAdmin']);
+Route::get('edit-adminprof/{id}', [AdminController::class, 'getInfoAdmin']);
+Route::post('updateAdmin', [AdminController::class, 'updateAdmin']);
 
 Route::get('/data-table', [AdminController::class, 'dataTable'])->name('data-table');
 Route::get('/add', [AdminController::class, 'categoryShow'])->name('add');

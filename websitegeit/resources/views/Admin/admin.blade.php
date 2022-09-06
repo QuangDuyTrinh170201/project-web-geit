@@ -288,36 +288,36 @@
 
                                           <!-- recent orders  -->
                             <!-- ============================================================== -->
-                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Recent Orders</h5>
+                                    <h5 class="card-header">Admin's Profile
+                                    
+                                    </h5>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Product ID</th>
-                                                        <th class="border-0">Product Name</th>
-                                                        <th class="border-0">Product Price</th>
-                                                        <th class="border-0">Product Details</th>
-                                                        <th class="border-0">Product Image</th>
-                                                        <th class="border-0">Product Category</th>
+                                                        <th class="border-0">Admin ID</th>
+                                                        <th class="border-0">Admin Name</th>
+                                                        <th class="border-0">Amin Phone</th>
+                                                        <th class="border-0">Admin Position</th>
+                                                        <th class="border-0">Admin Image</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($data as $row)
                                                     <tr>
-                                                        <td>{{$row->productID}}</td>
-                                                        <td>{{$row->productName}}</td>
-                                                        <td>{{$row->productPrice}}</td>
-                                                        <td>{{$row->productDetail}}</td>
-                                                        <td><img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" width="150px" height="100px" alt=""/></td>
-                                                        <td style="text-align: center;">{{$row->categoryID}}</td>
-                                                        {{-- <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td> --}}
+                                                        <td>{{$dataAdmin->adminID}}</td>
+                                                        <td>{{$dataAdmin->adminName}}</td>
+                                                        <td>{{$dataAdmin->adminPhone}}</td>
+                                                        <td>{{$dataAdmin->adminPosition}}</td>
+                                                        <td><img src="{{url('public')}}/Admin/assets/images/admin-image/{{$dataAdmin->adminImage}}" width="70px" height="75px" alt=""/></td>
+                                                        
+                                                            
                                                     </tr>
-                                                    @endforeach  
                                                 </tbody>
                                             </table>
+                                            <button class="btn btn-light"><a href="{{url('edit-adminprof/'.$dataAdmin->adminID)}}">Edit Profile</a></button>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +330,7 @@
                             <!-- ============================================================== -->
                             <!-- customer acquistion  -->
                             <!-- ============================================================== -->
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <h5 class="card-header">Customer Acquisition</h5>
                                     <div class="card-body">
