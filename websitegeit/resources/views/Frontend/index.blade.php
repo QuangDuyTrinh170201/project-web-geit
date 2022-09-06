@@ -199,7 +199,7 @@
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
                         style="background-image: url({{ url('public') }}/Frontend/img/bg-img/producttechnology.jpg);">
                         <div class="catagory-content">
-                            <a href="camera-product.html">Technology</a>
+                            <a href="{{url('/category/1')}}">Technology</a>
                         </div>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
                         style="background-image: url({{ url('public') }}/Frontend/img/bg-img/life.jpg);">
                         <div class="catagory-content">
-                            <a href="clothing-fashion-product.html">Life</a>
+                            <a href="{{url('/category/4')}}">Life</a>
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
                         style="background-image: url({{ url('public') }}/Frontend/img/bg-img/bg-4.jpg);">
                         <div class="catagory-content">
-                            <a href="Electronic-product.html">Accessories</a>
+                            <a href="{{url('/category/7')}}">Accessories</a>
                         </div>
                     </div>
                 </div>
@@ -261,13 +261,13 @@
 
         <div class="container">
             <div class="row">
-                
+
                     <div class="col-12">
                     <div class="popular-products-slides owl-carousel">
                         @foreach ($data1 as $row)
                         <!-- Single Product -->
                         <div class="single-product-wrapper">
-                           
+
                             <!-- Product Image -->
                             <div class="product-img">
                                 <img src="{{url('public')}}/Admin/assets/images/product-Image/{{$row->productImage1}}" alt="" style="width: 200px; height: 150px"> <!-- img1 -->
