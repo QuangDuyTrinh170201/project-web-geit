@@ -74,7 +74,7 @@
                 </div>
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="login.html"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
+                    <a href="{{url ('login')}}"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
                 </div>
                 <!-- Cart Area -->
                 <div class="cart-area">
@@ -196,7 +196,7 @@
                             </div>
                         </div>
 
-                      
+
                     </div>
                 </div>
 
@@ -243,7 +243,7 @@
 
                                         <!-- Product Description -->
                                         <div class="product-description">
-                                            <a href="{{url('singleProduct/'. $row->productID)}}"> 
+                                            <a href="{{url('singleProduct/'. $row->productID)}}">
                                                 <h6>{{$row->productName}}</h6> <!-- name Product -->
                                             </a>
                                             <a class="product-price">{{$row->productPrice}}$</a>

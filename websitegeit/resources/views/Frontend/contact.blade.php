@@ -75,7 +75,7 @@
                 </div>
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="login.html"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
+                    <a href="{{url ('login')}}"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
                 </div>
                 <!-- Cart Area -->
                 <div class="cart-area">
@@ -155,7 +155,7 @@
                     @if (Session::has('success'))
                     <div class="alert alert-success" role="alert">
                         {{Session::get('success')}}
-                    </div>                    
+                    </div>
                     @endif
                     <form action="{{url('saveReview')}}" method="POST">
                         @csrf
@@ -165,7 +165,7 @@
 
                         <div class="md-03">
                             <input type="text" name="name" class="form-control" placeholder="Your Name/Or use Incognito">
-                            
+
                         </div>
 
                         <div class="md-3">
@@ -174,7 +174,7 @@
                         </div>
 
                         <div class="d-flex justify-content-center"> <button text="align-center" type="submit" class="btn btn-primary">submit</button></div>
-                        
+
 
                     </form>
                 </div>
@@ -187,7 +187,7 @@
 
                         <div class="size-212 p-t-2">
                             <span class="mtext-110 ">
-                                <h5>Address:</h5> 
+                                <h5>Address:</h5>
                             </span>
 
                             <p class="stext-115 cl6 size-213 p-t-18">
@@ -203,7 +203,7 @@
 
                         <div class="size-212 p-t-2">
                             <span class="mtext-110 ">
-                               <h5>Lets Talk:</h5> 
+                               <h5>Lets Talk:</h5>
                             </span>
 
                             <p class="stext-115 cl1 size-213 p-t-18">
@@ -230,12 +230,12 @@
                 </div>
             </div>
         </div>
-    </section>	
-    
+    </section>
+
     <div class="map">
         <div class="size-303" id="google_map" data-map-x="10.801249687178068" data-map-y=" 106.64480315767148" data-pin="{{ url('public') }}/Frontend/img/bg-img/logoGS.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
     </div>
-   
+
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer_area clearfix">
@@ -272,7 +272,7 @@
                     </div>
                 </div>
             </div>
-              
+
             <div class="row align-items-end">
                 <!-- Single Widget Area -->
                 <div class="col-12 col-md-6">

@@ -17,13 +17,13 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/css/core-style.css">
     <link rel="stylesheet" href="{{ url('public') }}/Frontend/style.css">
-    
+
 
 
 </head>
 
 <body>
-    
+
     <!-- ##### Header Area Start ##### -->
     <header class="header_area">
         <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -76,7 +76,7 @@
                 </div>
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="login.html"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
+                    <a href="{{url ('login')}}"><img src="{{ url('public') }}/Frontend/img/core-img/user.svg" alt=""></a>
                 </div>
                 <!-- Cart Area -->
                 <div class="cart-area">
@@ -162,7 +162,7 @@
                         <!-- Post Title -->
                     </div>
                 </div>
-              
+
                 <!-- Single Blog Area -->
                 <div class="col-12 col-lg-6">
                     <div class="single-blog-area mb-50">
@@ -170,22 +170,22 @@
                         <!-- Post Title -->
                     </div>
                 </div>
-                <div> 
+                <div>
                     <figure>
                         <blockquote cite="https://www.huxley.net/bnw/four.html">
                             <dl>
                                 <dd>
                                     <p >
-                                       GeitStop is a newly form star-up, completely different with any other shop tht you have known. We focus on bring you products which satisfied your hobbies needs. We hope to serve and connect youthful, energetic man with hobbies. GeitStop seem familiar with some of you, in fact, we came from some online communities, which connect people who love photography, motorbike, etc. Come join us, you will get to known the best hobbies connection with most professional specialist. 
+                                       GeitStop is a newly form star-up, completely different with any other shop tht you have known. We focus on bring you products which satisfied your hobbies needs. We hope to serve and connect youthful, energetic man with hobbies. GeitStop seem familiar with some of you, in fact, we came from some online communities, which connect people who love photography, motorbike, etc. Come join us, you will get to known the best hobbies connection with most professional specialist.
                                     </p>
                                 </dd>
                             </dl>
-                            
+
                         </blockquote>
                         <figcaption> <cite>-- Founder GeitStop --</cite></figcaption>
                     </figure>
                 </div>
-               
+
             </div>
         </div>
     </div>
