@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{url('public')}}/Admin/assets/libs/css/style.css">
     <link rel="stylesheet" href="{{url('public')}}/Admin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="{{url('public')}}/Admin/assets/vendor/bootstrap-select/css/bootstrap-select.css">
-    <title>Edit customer page</title>
+    <title>Edit admin page</title>
   </head>
   <body>
     <div class="container" style="margin-top: 50px;">
@@ -42,8 +42,8 @@
                     </div>
                     <div class="md-3">
                         <label class="form-label" for="id"><h5 id ="txt-h2">Admin Avatar</h5></label>
-                        <input type="file" name="image" class="form-control" placeholder="Enter product image" accept="image/*">
-                            <img src="{{url('public')}}/Frontend/img/core-img/{{$data->customerImage}}" alt="This is image of {{$data->adminImage}}" height="150" width="150">
+                        <input type="file" name="image" class="form-control" placeholder="Enter product image" accept="image/*" value="{{url('public')}}/Frontend/img/core-img/{{$data->adminImage}}">
+                            <img src="{{url('public')}}/Frontend/img/core-img/{{$data->adminImage}}" alt="This is image of {{$data->adminImage}}" height="150" width="150">
                         @error('image1')
                             <div class ="alert alert-danger" role="alert">
                                 {{$message}}
